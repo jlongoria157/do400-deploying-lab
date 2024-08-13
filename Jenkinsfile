@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        node { label: "maven" }
+        node { label "maven" }
     }
 
     environment { QUAY = credentials('QUAY_USER') }
