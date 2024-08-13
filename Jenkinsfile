@@ -12,6 +12,9 @@ pipeline {
             }
         }
         stage("Build & Push Image") {
+	   steps {
+    	   	 echo "QUAY User: $QUAY_USR"
+	   }
             steps {
                 sh '''
                     ./mvnw quarkus:add-extension \
