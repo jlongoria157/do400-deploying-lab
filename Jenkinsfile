@@ -11,6 +11,16 @@ pipeline {
                 sh "./mvnw verify"
             }
         }
+	stage('Environment Check') {
+    	steps {
+        	sh '''
+        	echo "Current Branch: ${GIT_BRANCH}"
+        	echo "QUAY_USER: $QUAY_USR"
+        	echo "QUAY_PSW: ${QUAY_PSW}"
+        	echo "Registry: quay.io"
+        	'''
+    	}
+	}
         stage("Build & Push Image") {
             steps {
 		echo "QUAY User: $QUAY_USR"
