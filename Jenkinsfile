@@ -12,10 +12,9 @@ pipeline {
             }
         }
         stage("Build & Push Image") {
-	   steps {
-    	   	 echo "QUAY User: $QUAY_USR"
-	   }
             steps {
+		echo "QUAY User: $QUAY_USR"
+
                 sh '''
                     ./mvnw quarkus:add-extension \
                     -Dextensions="container-image-jib"
