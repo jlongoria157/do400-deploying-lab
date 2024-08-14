@@ -25,7 +25,7 @@ pipeline {
             steps {
 		echo "QUAY User: $QUAY_USR"
 		echo "QUAY_PSW: ${QUAY_PSW}"
-		echo "Using Registry: $QUAY_USER@quay.io"
+		echo "Using Registry: $QUAY_USR@quay.io"
 		
                 sh '''
                     ./mvnw quarkus:add-extension \
